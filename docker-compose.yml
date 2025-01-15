@@ -1,26 +1,26 @@
 services:
   app:
     build:
-      context: .
+      context: .  # Assuming Dockerfile is in the same directory
       dockerfile: Dockerfile
-    container_name: app_earthphPWA # Updated container name
+    container_name: app_earthphpwa
     ports:
-      - "6052:6052" # Map container's port 5001 to your local machine's port 5001
+      - "6052:6052"  # Map container's port 6052 to the local machine's port 6052
     volumes:
-      - .:/app # Sync local files with the container
-      - /app/node_modules # Avoid overriding node_modules
+      - .:/app  # Sync local files with the container
+      - /app/node_modules  # Avoid overriding node_modules
     environment:
-      - MONGO_URL=mongodb://db:29017/earthphPWA # Connect to MongoDB container using its service name 'db'
+      - MONGO_URL=mongodb://db:27017/earthphpwa  # Connect to MongoDB container using its service name 'db'
     depends_on:
-      - db # Ensure the app service waits for the db service to be ready
+      - db  # Ensure the app service waits for the db service to be ready
 
   db:
-    image: mongo:5.0 # MongoDB image
-    container_name: db_earthphPWA # Updated container name
+    image: mongo:5.0
+    container_name: db_earthphpwa
     ports:
-      - "29018:29017" # Expose MongoDB container's port 27017 to the host's port 27018
+      - "27018:27017"  # Expose MongoDB container's port 27017 to the host's port 27018
     volumes:
-      - mongodb_earthph_dataPWA:/data/db # Persist MongoDB data to volume
+      - mongodb_earthph_datapwa:/data/db  # Persist MongoDB data to volume
 
 volumes:
-  mongodb_earthph_dataPWA:
+  mongodb_earthph_datapwa:  # Ensure this volume is declared for persistent storage

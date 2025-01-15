@@ -1,3 +1,5 @@
+version: '3.8'  # Specify the Compose file version
+
 services:
   app:
     build:
@@ -5,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: app_earthphpwa
     ports:
-      - "6052:6052"  # Map container's port 6052 to the local machine's port 6052
+      - "6052:6052"  # Map container's port 6052 to the host's port 6052
     volumes:
       - .:/app  # Sync local files with the container
       - /app/node_modules  # Avoid overriding node_modules
@@ -23,4 +25,5 @@ services:
       - mongodb_earthph_datapwa:/data/db  # Persist MongoDB data to volume
 
 volumes:
-  mongodb_earthph_datapwa:  # Ensure this volume is declared for persistent storage
+  mongodb_earthph_datapwa:  # Declare the named volume
+    driver: local

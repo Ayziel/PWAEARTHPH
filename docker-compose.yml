@@ -19,7 +19,7 @@ services:
     image: mongo:5.0
     container_name: db_earthphpwa
     ports:
-      - "27018:27017"  # Expose MongoDB container's port 27017 to the host's port 27018
+      - "25020:27017"  # Expose MongoDB container's port 27017 to the host's port 27018
     volumes:
       - mongodb_earthph_datapwa:/data/db  # Persist MongoDB data to volume
 

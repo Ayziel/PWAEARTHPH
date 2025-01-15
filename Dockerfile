@@ -14,7 +14,7 @@ RUN npm ci  # Use 'npm ci' for more reliable and faster installs
 COPY . .
 
 # Expose the port your app runs on
-EXPOSE 5001
+EXPOSE 6052
 
 # Command to start the app
 CMD ["npm", "start"]

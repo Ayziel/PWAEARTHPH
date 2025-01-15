@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: app_earthph # Updated container name
+    container_name: app_earthphPWA # Updated container name
     ports:
       - "6052:6052" # Map container's port 5001 to your local machine's port 5001
     volumes:
@@ -16,11 +16,11 @@ services:
 
   db:
     image: mongo:5.0 # MongoDB image
-    container_name: db_earthph # Updated container name
+    container_name: db_earthphPWA # Updated container name
     ports:
       - "29018:29017" # Expose MongoDB container's port 27017 to the host's port 27018
     volumes:
-      - mongodb_earthph_data:/data/db # Persist MongoDB data to volume
+      - mongodb_earthph_dataPWA:/data/db # Persist MongoDB data to volume
 
 volumes:
-  mongodb_earthph_data:
+  mongodb_earthph_dataPWA:

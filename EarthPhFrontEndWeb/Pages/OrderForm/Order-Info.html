@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order Form</title>
+        
+        <!-- Linking the CSS file -->
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/orderInfo.css">
+    </head>
+    <body>
+        <div class="form-container">
+            <h2>New Order</h2>
+            <form id="orderForm" enctype="multipart/form-data">
+                <!-- Add Item Pop-up Button -->
+                <h3>Add Item</h3>
+                <button type="button" id="addItemBtn">Add Item</button>
+            
+                <!-- Modal (Hidden initially) -->
+                <div id="productModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="closeModalBtn">&times;</span>
+                        <h3>Select Products</h3>
+                        <div id="product-list"></div>
+
+                        <button type="button" id="submitProductsBtn">Add Selected Products</button>
+                    </div>
+                </div>
+        
+                <!-- Chosen product details -->
+                <div id="productDetails"></div>
+            
+                <!-- Order Computation -->
+                <h3>Order Computation</h3>
+                <div class="form-group">
+                    <label for="listPrice">List Price of Orders:</label>
+                    <input type="text" id="listPrice" name="list-price" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="totalItems">Total Number of Items Bought:</label>
+                    <input type="text" id="totalItems" name="total-items" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="totalAmount">Total Amount:</label>
+                    <input type="text" id="totalAmount" name="total-amount" readonly>
+                </div>
+            
+                <!-- Payment Information -->
+                <h3>Payment Information</h3>
+                <div class="form-group">
+                    <label for="paymentMode">Mode of Payment:</label>
+                    <select id="paymentMode" name="payment-mode">
+                        <option value="" selected disabled>Select Payment Mode</option>
+                        <option value="cash">Cash</option>
+                        <option value="credit">GCash</option>
+                    </select>
+                </div>
+                <div class="form-group proof-of-payment-container">
+                    <label for="paymentImage">Proof of Payment Image:</label>
+                    <input type="file" id="paymentImage" name="payment-image" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="remarks">Remarks:</label>
+                    <textarea id="remarks" name="remarks" placeholder="Enter Remarks"></textarea>
+                </div>
+            
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button id="submitOrderBtn" type="submit">Submit Order</button>
+                </div>
+            </form>
+            
+        </div>
+        <!-- Receipt Modal -->
+
+        <div id="receiptModal" class="modal-receipt">
+            <!-- Modal Content -->
+            <div class="modal-content-receipt">
+                <h2>Receipt</h2>
+                <!-- Receipt Details -->
+                <div class="receipt-details-receipt">
+                    <p><strong>Shop Name: </strong><span id="storeName"></span></p>
+                    <p><strong>Issue Date:</strong> <span id="issueDate"></span></p>
+                    <hr>
+                    <h3>Items Purchased:</h3>
+                    <div id="productDetailsModal"></div>
+                    <hr>
+                    <p><strong>Total Amount:</strong> <span id="totalAmount"></span></p>
+                    <p><strong>Payment Method:</strong> <span id="paymentMethod">Credit Card</span></p>
+                    <p><strong>Status:</strong> <span id="status">Pending</span></p>
+                </div>
+                <!-- Print Receipt Button -->
+                <button id="printReceiptBtn">Print Receipt</button>
+                <!-- Print Receipt Button -->
+                <button class="accept-order" id="acceptOrderBtn">Accept Order</button>
+                <!-- Close Button -->
+                <button class="close-receipt">Back</button>
+            </div>
+        </div>
+        <script src="./scripts/orderInfo.js"></script>
+        <script src="./scripts.js"></script>   
+
+    </body>
+</html>

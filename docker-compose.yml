@@ -1,4 +1,4 @@
-version: '2.2'  # Specify the Compose file version
+version: '3.5'  # Specify the Compose file version
 services:
   app:
     build:

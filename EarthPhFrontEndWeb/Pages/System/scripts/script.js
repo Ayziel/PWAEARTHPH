@@ -88,7 +88,7 @@ if (window.innerWidth < 768) {
 document.addEventListener('DOMContentLoaded', () => {
   const token = localStorage.getItem('authToken');
   if (!token) {
-      window.location.href = 'https://earthph.jdinfotech.net/System/login.html';  // Adjust path accordingly
+      window.location.href = 'https://earthph-pwa.sdevtech.com.ph/System/login.html';  // Adjust path accordingly
   }
 });
 
@@ -103,7 +103,7 @@ function logoutUser() {
     localStorage.removeItem('userRole');
     console.log('User logged out.');
     // Redirect to the login page
-    window.location.href = 'https://earthph.jdinfotech.net/System/login.html'; // Adjust path as needed
+    window.location.href = 'https://earthph-pwa.sdevtech.com.ph/System/login.html'; // Adjust path as needed
 }
 
 
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!token) {
     // Redirect to login if no token
-    window.location.href = 'https://earthph.jdinfotech.net/System/login.html';
+    window.location.href = 'https://earthph-pwa.sdevtech.com.ph/System/login.html';
   }
 
   const sidebarMenu = document.querySelector('.menu_items');

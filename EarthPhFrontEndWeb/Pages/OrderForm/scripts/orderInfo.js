@@ -320,6 +320,8 @@ logLocalStorageItems();
     
         // Then use the extracted values to populate order data
         const orderData = {
+            storeUid: "test",
+            userUid: "test",
             agentName: user.agentName,
             teamLeaderName: user.teamLeaderName,
             area: user.area,

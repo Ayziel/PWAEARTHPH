@@ -18,7 +18,7 @@ app.use(express.json({ limit: '10mb' })); // Parse incoming JSON requests
 app.use(express.urlencoded({ limit: '10mb', extended: true })); // Parse URL-encoded bodies
 
 // Connect to MongoDB
-const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/earthph';
+const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:29017/earthphPWA';
 mongoose.connect(mongoURL)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log('MongoDB connection error:', err));
@@ -51,7 +51,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(5001, () => {
+app.listen(6052, () => {
   console.log('Server started on port 5001');
   console.log(`Connecting to MongoDB at: ${mongoURL}`);
 });
